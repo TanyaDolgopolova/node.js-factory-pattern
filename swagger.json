@@ -1,0 +1,31 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title" : "Example API Documentation",
+      "version": "v1",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "basePath": "/api",
+    "schemes": [
+      "http", "https"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "components": {
+      "schemas": {},
+      "securitySchemes": {
+          "bearer": {
+              "type": "http",
+              "scheme": "bearer",
+              "bearerFormat": "JWT"
+          }
+      }
+  }
+}
