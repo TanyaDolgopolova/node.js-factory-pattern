@@ -1,31 +1,29 @@
 {
-    "openapi": "3.0.1",
-    "info": {
-      "title" : "Example API Documentation",
-      "version": "v1",
-      "license": {
-        "name": "MIT",
-        "url": "https://opensource.org/licenses/MIT"
-      }
+  "swagger": "2.0",
+  "info": {
+    "description": "This is a sample Petstore server.",
+    "version": "1.0.0",
+    "title": "Petstore Documentation",
+    "contact": {
+      "email": "tetiana.dolgopolova@gmail.com"
     },
-    "basePath": "/api",
-    "schemes": [
-      "http", "https"
-    ],
-    "consumes": [
-      "application/json"
-    ],
-    "produces": [
-      "application/json"
-    ],
-    "components": {
-      "schemas": {},
-      "securitySchemes": {
-          "bearer": {
-              "type": "http",
-              "scheme": "bearer",
-              "bearerFormat": "JWT"
-          }
-      }
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3100",
+  "basePath": "/api",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "securityDefinitions": {
+    "bearer_auth": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "scheme": "bearer",
+      "in": "header"
+    }
   }
 }
