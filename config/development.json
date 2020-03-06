@@ -1,9 +1,11 @@
 {
-    "database": {
-      "dbConfig": {
-        "host": "localhost",
-        "port": 5984,
-        "dbName": "pets"
-      }
+  "database": {
+    "dbConfig": {
+      "type": "mongodb",
+      "name": "TestDataBase",
+      "url": "mongodb+srv://TestMongoDBUser:myNewMongoDBUser@testdatabase-mrz6w.mongodb.net/test?retryWrites=true&w=majority",
+      "port": 3000,
+      "dbName": "PetMarket"
     }
+  }
 }
