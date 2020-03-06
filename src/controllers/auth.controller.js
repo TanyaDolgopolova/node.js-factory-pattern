@@ -1,4 +1,3 @@
-
 /**
  * @swagger
  * /loginUser:
@@ -36,7 +35,5 @@
  */
 
 module.exports = app => {
-  app.post('/loginUser', (req, res, next) => {
-    
-  });
+    app.post("/loginUser", (req, res, next) => {});
 };

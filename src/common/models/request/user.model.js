@@ -12,6 +12,5 @@
  */
 
 module.exports = function() {
-   this.userName = '',
-   this.password = ''
-}
+    (this.userName = ""), (this.password = "");
+};
