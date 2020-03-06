@@ -8,7 +8,6 @@
     "build": "npm run pretty && babel src -s -D -d dist --presets es2015,stage-0",
     "start": "NODE_PATH=src/ NODE_ENV=development nodemon src/main.js --exec babel-node --presets es2015",
     "start:prod": "NODE_PATH=src/ NODE_ENV=production nodemon src/main.js --exec babel-node --presets es2015",
-    "prestart": "npm run -s build",
     "test": "eslint src",
     "pretty": "prettier --write --tab-width 4 \"src/**/*.js\"",
     "precommit": "lint-staged && npm test"
@@ -44,6 +43,7 @@
     "config": "^3.3.0",
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "mongoose": "^5.9.3",
     "swagger-jsdoc": "^3.2.9",
     "swagger-ui-express": "^4.1.3"
   },
