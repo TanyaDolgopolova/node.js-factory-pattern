@@ -1,6 +1,8 @@
 const middlewareFactoryList = [
     require("./swaggerFactory"),
-
+    require("./corsFactory"),
+    require("./bodyParserJsonFactory"),
+    require("./bodyParserUrlFactory"),
     // Make sure configureErrorHandler is LAST
     require("./errorHandlerFactory")
 ];

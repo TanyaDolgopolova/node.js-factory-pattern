@@ -15,8 +15,8 @@
   "host": "localhost:3300",
   "basePath": "/api",
   "schemes": [
-    "https",
-    "http"
+    "http",
+    "https"
   ],
   "securityDefinitions": {
     "bearer_auth": {

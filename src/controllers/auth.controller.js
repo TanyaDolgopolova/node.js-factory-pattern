@@ -30,10 +30,12 @@
  *         description: User found and logged in successfully
  *       '401':
  *         description: Bad username, not found in db
- *       '403':
+ *       '404':
  *         description: Username and password don't match
+ *       '500':
+ *         description: Internal Server Error
  */
 
 module.exports = app => {
-    app.post("/loginUser", (req, res, next) => {});
+    app.post("/api/loginUser", (req, res, next) => {});
 };

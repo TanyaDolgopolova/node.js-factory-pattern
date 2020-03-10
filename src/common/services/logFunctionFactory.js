@@ -1,7 +1,6 @@
 import debug from "debug";
 import config from "config";
 
-/* eslint-disable no-console */
 const factory = {
     getErrorLogger: name => {
         const logger = debug(`${config.appName}:${name} - ERROR`);
