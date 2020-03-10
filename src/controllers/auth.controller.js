@@ -64,7 +64,6 @@ module.exports = (router) => {
  *       '500':
  *         description: Internal Server Error
  */
-import errorTypes from "common/models/errorTypes";
 
 module.exports = (router) => {
     router.post("/api/registerUser", (req, res) => {
