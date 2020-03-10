@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint",
     "build": "npm run pretty && babel src -s -D -d dist --presets es2015,stage-0",
-    "start": "NODE_PATH=src/ NODE_ENV=development nodemon src/main.js --exec babel-node --presets es2015",
+    "start": "NODE_PATH=src/ NODE_ENV=development nodemon --inspect src/main.js --exec babel-node --presets es2015",
     "start:prod": "NODE_PATH=src/ NODE_ENV=production nodemon src/main.js --exec babel-node --presets es2015",
     "test": "eslint src",
     "pretty": "prettier --write --tab-width 4 \"src/**/*.js\"",

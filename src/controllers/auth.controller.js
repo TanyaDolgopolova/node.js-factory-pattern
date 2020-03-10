@@ -3,9 +3,9 @@
  * /loginUser:
  *   post:
  *     tags:
- *       - Users
+ *       - Auth
  *     name: Login
- *     summary: Logs in a user
+ *     summary: Login a user
  *     produces:
  *       - application/json
  *     consumes:
@@ -14,16 +14,45 @@
  *       - name: body
  *         in: body
  *         schema:
- *           $ref: '#/definitions/User'
- *           type: object
- *           properties:
- *             username:
- *               type: string
- *             password:
- *               type: string
- *               format: password
+ *           $ref: '#/definitions/LoginUser'
  *         required:
  *           - username
+ *           - password
+ *     responses:
+ *       '200':
+ *         description: User found and logged in successfully
+ *       '401':
+ *         description: Bad usernLoginUserame, not found in db
+ *       '404':
+ *         description: Username and password don't match
+ *       '500':
+ *         description: Internal Server Error
+ */
+
+module.exports = (router) => {
+    router.post("/api/loginUser", (req, res, next) => {});
+};
+
+/**
+ * @swagger
+ * /registerUser:
+*   post:
+ *     tags:
+ *       - Auth
+ *     name: Register
+ *     summary: Register a user
+ *     produces:
+ *       - application/json
+ *     consumes:
+ *       - application/json
+ *     parameters:
+ *       - name: body
+ *         in: body
+ *         schema:
+ *           $ref: '#/definitions/RegisterUser'
+ *         required:
+ *           - username
+ *           - email
  *           - password
  *     responses:
  *       '200':
@@ -35,7 +64,10 @@
  *       '500':
  *         description: Internal Server Error
  */
+import errorTypes from "common/models/errorTypes";
 
-module.exports = app => {
-    app.post("/api/loginUser", (req, res, next) => {});
+module.exports = (router) => {
+    router.post("/api/registerUser", (req, res) => {
+        
+    });
 };

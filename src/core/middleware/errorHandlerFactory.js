@@ -13,20 +13,26 @@ module.exports = function errorHandlerFactory() {
         switch (err.errorType) {
             case errorTypes.badRequest: {
                 res.status(400).json({ message: err.message });
+                break;
             }
             case errorTypes.loginFailed: {
                 res.status(401).json({
                     message: "The username or password was invalid."
                 });
+                break;
             }
             case errorTypes.notFound: {
                 res.status(404).json({ message: err.message });
+                break;
             }
             case errorTypes.serverError: {
                 res.status(500).json({ message: err.message });
+                break;
             }
-            default:
+            default: {
                 next(err);
+                break;
+            }
         }
     };
 };

@@ -1,7 +1,7 @@
 /**
  * @swagger
  * definitions:
- *   User:
+ *   LoginUser:
  *     type: object
  *     properties:
  *       username:
@@ -12,5 +12,6 @@
  */
 
 module.exports = function() {
-    (this.userName = ""), (this.password = "");
+    this.userName = "";
+    this.password = "";
 };
