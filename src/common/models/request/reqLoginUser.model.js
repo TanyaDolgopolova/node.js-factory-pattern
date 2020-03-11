@@ -1,7 +1,7 @@
 /**
  * @swagger
  * definitions:
- *   LoginUser:
+ *   RequestLoginUser:
  *     type: object
  *     properties:
  *       username:
@@ -9,6 +9,9 @@
  *       password:
  *         type: string
  *         format: password
+ *     required:
+ *       - username
+ *       - password
  */
 
 module.exports = function() {

@@ -1,9 +1,10 @@
 {
-    "database": {
-      "dbConfig": {
-        "host": "localhost",
-        "port": 5984,
-        "dbName": "pets"
-      }
+  "basePath": "/api",
+  "database": {
+    "dbConfig": {
+      "host": "localhost",
+      "port": 5984,
+      "dbName": "pets"
     }
+  }
 }

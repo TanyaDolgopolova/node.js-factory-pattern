@@ -5,7 +5,7 @@ const middlewareFactoryList = [
     require("./bodyParserJsonFactory"),
     require("./bodyParserUrlFactory"),
 
-    require('./routesFactory'),
+    require("./routesFactory"),
 
     // Make sure configureErrorHandler is LAST
     require("./errorHandlerFactory")
