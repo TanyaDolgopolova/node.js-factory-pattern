@@ -4,7 +4,7 @@ import swaggerUi from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
 
 module.exports = function swaggerFactory() {
-    var router = express.Router();
+    let router = express.Router();
 
     let swaggerSpec = swaggerJSDoc({
         swaggerDefinition,

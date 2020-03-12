@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-var UserShema = mongoose.Schema({
+let UserShema = mongoose.Schema({
     creationDate: Date,
     email: String,
     userName: String,

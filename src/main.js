@@ -6,7 +6,7 @@ import middlewareFactory from "core/middleware/middlewareFactory";
 const API_PORT = process.env.API_PORT || 3300;
 
 function bootstrap() {
-    var app = express();
+    let app = express();
     mongoose.connect(config.database.dbConfig.url, {
         dbName: config.database.dbConfig.dbName,
         useUnifiedTopology: true,

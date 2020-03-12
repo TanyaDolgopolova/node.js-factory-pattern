@@ -9,11 +9,16 @@ import { ResponseLoginUserModel } from "common/models/response/resLoginUser.mode
 import { UserModel } from "common/models/user.model";
 import { ErrorModel } from "common/models/error.model";
 
-var AuthService = {
+let AuthService = {
     loginUser: async (loginData, response, errorHandler) => {
         let userData = await AuthRepository.loginUser(loginData);
         if (!userData) {
-            errorHandler(new ErrorModel("User with such username does not exist.", errorTypes.badRequest))
+            errorHandler(
+                new ErrorModel(
+                    "User with such username does not exist.",
+                    errorTypes.badRequest
+                )
+            );
             return;
         }
 
@@ -22,7 +27,9 @@ var AuthService = {
             result
         ) {
             if (err) {
-                errorHandler(new ErrorModel(err.message, errorTypes.serverError))
+                errorHandler(
+                    new ErrorModel(err.message, errorTypes.serverError)
+                );
                 return;
             }
 
@@ -34,7 +41,7 @@ var AuthService = {
                     userData.firstName,
                     userData.lastName
                 );
-                const accessToken = jwt.sign({user}, config.jwtSecretToken, {
+                const accessToken = jwt.sign({ user }, config.jwtSecretToken, {
                     expiresIn: "24h"
                 });
                 return response.json(
@@ -47,13 +54,17 @@ var AuthService = {
     registerUser: (registerData, response, errorHandler) => {
         bcrypt.genSalt(saltRounds, function(err, salt) {
             if (err) {
-                errorHandler(new ErrorModel(err.message, errorTypes.serverError))
+                errorHandler(
+                    new ErrorModel(err.message, errorTypes.serverError)
+                );
                 return;
             }
 
             bcrypt.hash(registerData.password, salt, async function(err, hash) {
                 if (err) {
-                    errorHandler(new ErrorModel(err.message, errorTypes.serverError))
+                    errorHandler(
+                        new ErrorModel(err.message, errorTypes.serverError)
+                    );
                     return;
                 }
 
@@ -69,14 +80,19 @@ var AuthService = {
                 });
 
                 if (result) {
-                    errorHandler({
-                        message: result,
-                        errorType: errorTypes.badRequest
-                    });
+                    errorHandler(
+                        new ErrorModel(
+                            "User with such username already exist.",
+                            errorTypes.badRequest
+                        )
+                    );
                     return;
                 }
 
-                return response.json({ message: "Successful register user" });
+                return response.json({
+                    success: true,
+                    message: "Successful register user"
+                });
             });
         });
     }

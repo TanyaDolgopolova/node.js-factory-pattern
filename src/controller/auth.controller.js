@@ -1,4 +1,4 @@
-import AuthService from "services/auth.service";
+import AuthService from "service/auth.service";
 import config from "config";
 
 module.exports = function AuthController(router) {

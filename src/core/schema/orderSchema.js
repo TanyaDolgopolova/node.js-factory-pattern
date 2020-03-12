@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-var OrderSchema = mongoose.Schema({
+let OrderSchema = mongoose.Schema({
     creationDate: Date,
     buyerId: String,
     totalPrice: Number,

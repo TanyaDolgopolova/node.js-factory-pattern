@@ -1,6 +1,6 @@
 import User from "core/schema/userSchema";
 
-var AuthRepository = {
+let AuthRepository = {
     loginUser: async loginData => {
         let res = await User.findOne({
             userName: loginData.userName
@@ -25,16 +25,13 @@ var AuthRepository = {
             userName: registerData.userName
         });
         if (user) {
-            return "User with such username already exist.";
+            return false;
         }
 
         let obj = new User(registerData);
         let res = await obj.save();
-        if (!res) {
-            return "Error while register user.";
-        }
 
-        return null;
+        return true;
     }
 };
 

@@ -1,5 +1,5 @@
 import errorTypes from "common/models/errorTypes";
-import logFunctionFactory from "common/services/logFunctionFactory";
+import logFunctionFactory from "common/service/logFunctionFactory";
 
 module.exports = function errorHandlerFactory() {
     const writeError = logFunctionFactory.getErrorLogger("errorHandler");
