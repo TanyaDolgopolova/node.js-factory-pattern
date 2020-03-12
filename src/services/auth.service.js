@@ -1,18 +1,19 @@
 import AuthRepository from "repository/auth.repository";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import config from "config";
 import saltRounds from "common/constants";
 import errorTypes from "common/models/errorTypes";
 import RoleTypesEnum from "common/enums/roleTypesEnum";
-import {ResponseLoginUserModel} from "common/models/response/resLoginUser.model";
+import { ResponseLoginUserModel } from "common/models/response/resLoginUser.model";
+import { UserModel } from "common/models/user.model";
+import { ErrorModel } from "common/models/error.model";
 
 var AuthService = {
     loginUser: async (loginData, response, errorHandler) => {
         let userData = await AuthRepository.loginUser(loginData);
         if (!userData) {
-            errorHandler({
-                message: "User with such username does not exist.",
-                errorType: errorTypes.badRequest
-            });
+            errorHandler(new ErrorModel("User with such username does not exist.", errorTypes.badRequest))
             return;
         }
 
@@ -21,24 +22,23 @@ var AuthService = {
             result
         ) {
             if (err) {
-                errorHandler({
-                    message: err.message,
-                    errorType: errorTypes.serverError
-                });
+                errorHandler(new ErrorModel(err.message, errorTypes.serverError))
                 return;
             }
 
             if (result) {
-                const accessToken = "";
+                const user = new UserModel(
+                    userData.id,
+                    userData.userName,
+                    userData.email,
+                    userData.firstName,
+                    userData.lastName
+                );
+                const accessToken = jwt.sign({user}, config.jwtSecretToken, {
+                    expiresIn: "24h"
+                });
                 return response.json(
-                    new ResponseLoginUserModel(
-                        accessToken,
-                        userData.id,
-                        userData.userName,
-                        userData.email,
-                        userData.firstName,
-                        userData.lastName
-                    )
+                    new ResponseLoginUserModel(accessToken, user)
                 );
             }
         });
@@ -47,19 +47,13 @@ var AuthService = {
     registerUser: (registerData, response, errorHandler) => {
         bcrypt.genSalt(saltRounds, function(err, salt) {
             if (err) {
-                errorHandler({
-                    message: err.message,
-                    errorType: errorTypes.serverError
-                });
+                errorHandler(new ErrorModel(err.message, errorTypes.serverError))
                 return;
             }
 
             bcrypt.hash(registerData.password, salt, async function(err, hash) {
                 if (err) {
-                    errorHandler({
-                        message: err.message,
-                        errorType: errorTypes.serverError
-                    });
+                    errorHandler(new ErrorModel(err.message, errorTypes.serverError))
                     return;
                 }
 

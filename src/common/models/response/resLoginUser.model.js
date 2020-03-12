@@ -25,12 +25,12 @@
  */
 
 export class ResponseLoginUserModel {
-    constructor(accessToken, userId, userName, email, firstName, lastName) {
+    constructor(accessToken, user) {
         this.accessToken = accessToken;
-        this.userId = userId;
-        this.userName = userName;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.userId = user.userId;
+        this.userName = user.userName;
+        this.email = user.email;
+        this.firstName = user.firstName;
+        this.lastName = user.lastName;
     }
 }

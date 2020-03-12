@@ -1,6 +1,7 @@
 {
   "basePath": "/api",
-  "jwtSecretToken": "",
+  "jwtSecretToken": "nmgmj.KfjlF;g",
+  "expiresIn": "24h",
   "database": {
     "dbConfig": {
       "type": "mongodb",

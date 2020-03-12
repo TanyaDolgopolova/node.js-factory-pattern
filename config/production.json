@@ -1,6 +1,7 @@
 {
   "basePath": "/api",
   "jwtSecretToken": "",
+  "expiresIn": "24h",
   "database": {
     "dbConfig": {
       "host": "localhost",
