@@ -4,7 +4,7 @@
  *   RequestLoginUser:
  *     type: object
  *     properties:
- *       username:
+ *       userName:
  *         type: string
  *       password:
  *         type: string
@@ -14,7 +14,9 @@
  *       - password
  */
 
-module.exports = function() {
-    this.userName = "";
-    this.password = "";
-};
+export class RequestLoginUserModel {
+    constructor(userName, password) {
+        this.userName = userName;
+        this.password = password;
+    }
+}

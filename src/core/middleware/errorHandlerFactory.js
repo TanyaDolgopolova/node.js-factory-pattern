@@ -15,12 +15,6 @@ module.exports = function errorHandlerFactory() {
                 res.status(400).json({ message: err.message });
                 break;
             }
-            case errorTypes.loginFailed: {
-                res.status(401).json({
-                    message: "The username or password was invalid."
-                });
-                break;
-            }
             case errorTypes.notFound: {
                 res.status(404).json({ message: err.message });
                 break;

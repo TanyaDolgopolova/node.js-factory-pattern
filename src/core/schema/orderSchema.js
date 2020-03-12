@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-module.export = new mongoose.Schema({
+var OrderSchema = mongoose.Schema({
     creationDate: Date,
     buyerId: String,
     totalPrice: Number,
@@ -8,3 +8,5 @@ module.export = new mongoose.Schema({
         petIds: [String]
     }
 });
+
+module.exports = mongoose.model("Order", OrderSchema);

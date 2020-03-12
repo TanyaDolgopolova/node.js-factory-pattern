@@ -4,7 +4,7 @@
  *   RequestRegisterUser:
  *     type: object
  *     properties:
- *       username:
+ *       userName:
  *         type: string
  *       firstName:
  *         type: string
@@ -22,10 +22,12 @@
  *        - password
  */
 
-module.exports = function() {
-    this.userName = "";
-    this.email = "";
-    this.password = "";
-    this.firstName = "";
-    this.lastName = "";
-};
+export class RequestRegisterUserModel {
+    constructor(userName, email, password, firstName = null, lastName = null) {
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}

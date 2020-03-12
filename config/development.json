@@ -1,5 +1,6 @@
 {
   "basePath": "/api",
+  "jwtSecretToken": "",
   "database": {
     "dbConfig": {
       "type": "mongodb",

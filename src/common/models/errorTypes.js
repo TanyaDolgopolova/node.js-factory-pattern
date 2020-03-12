@@ -8,7 +8,6 @@ throw {
 
 module.exports = {
     badRequest: Symbol.for("bad request"),
-    loginFailed: Symbol.for("login failed"),
-    serverError: Symbol.for("server error"),
-    notFound: Symbol.for("not found")
+    notFound: Symbol.for("not found"),
+    serverError: Symbol.for("server error")
 };

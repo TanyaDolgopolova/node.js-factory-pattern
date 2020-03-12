@@ -8,27 +8,29 @@
  *         type: string
  *       userId:
  *         type: number
- *       username:
+ *       userName:
  *         type: string
  *       email:
  *         type: string
  *         format: email
  *       firstName:
  *         type: string
- *       lastName: 
+ *       lastName:
  *         type: string
  *     required:
  *        - accessToken
  *        - userId
  *        - username
  *        - email
-*/
+ */
 
-module.exports = function() {
-    this.accessToken = "";
-    this.userId = -1;
-    this.userName = "";
-    this.email = "";
-    this.firstName = "";
-    this.lastName = "";
-};
+export class ResponseLoginUserModel {
+    constructor(accessToken, userId, userName, email, firstName, lastName) {
+        this.accessToken = accessToken;
+        this.userId = userId;
+        this.userName = userName;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+}

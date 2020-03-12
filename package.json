@@ -38,11 +38,13 @@
   "readmeFilename": "README.md",
   "dependencies": {
     "babel-eslint": "^4.1.8",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "compression": "^1.5.2",
     "config": "^3.3.0",
     "cors": "^2.8.4",
     "express": "^4.16.3",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.3",
     "swagger-jsdoc": "^3.2.9",
     "swagger-ui-express": "^4.1.3"

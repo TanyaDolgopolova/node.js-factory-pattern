@@ -1,11 +1,14 @@
 import mongoose from "mongoose";
-import { RoleTypesEnum } from "common/enums/roleTypesEnum";
 
-module.export = new mongoose.Schema({
+var UserShema = mongoose.Schema({
     creationDate: Date,
     email: String,
-    username: String,
-    passwordHash: String,
+    userName: String,
+    firstName: String,
+    lastName: String,
+    password: String,
     isActive: Boolean,
-    role: RoleTypesEnum
+    role: String
 });
+
+module.exports = mongoose.model("User", UserShema);

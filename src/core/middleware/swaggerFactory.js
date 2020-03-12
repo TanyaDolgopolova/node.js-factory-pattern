@@ -8,7 +8,11 @@ module.exports = function swaggerFactory() {
 
     let swaggerSpec = swaggerJSDoc({
         swaggerDefinition,
-        apis: ["src/controllers/*.js", "src/common/models/request/*.js", "src/common/models/response/*.js"]
+        apis: [
+            "src/controller/*.js",
+            "src/common/models/request/*.js",
+            "src/common/models/response/*.js"
+        ]
     });
     router.get("/", (req, res) => res.redirect("/swagger"));
 
