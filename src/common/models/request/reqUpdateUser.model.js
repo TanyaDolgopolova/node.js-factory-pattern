@@ -1,9 +1,11 @@
 /**
  * @swagger
  * definitions:
- *   RequestRegisterUser:
+ *   RequestUpdateUser:
  *     type: object
  *     properties:
+ *       id:
+ *         type: string
  *       userName:
  *         type: string
  *       firstName:
@@ -22,8 +24,9 @@
  *        - password
  */
 
-export class RequestRegisterUserModel {
-    constructor(userName, email, password, firstName, lastName) {
+export class RequestUpdateUserModel {
+    constructor(id, userName, email, password, firstName, lastName) {
+        this.id = id;
         this.userName = userName;
         this.email = email;
         this.password = password;

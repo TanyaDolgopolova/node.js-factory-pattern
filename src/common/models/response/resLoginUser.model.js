@@ -6,8 +6,8 @@
  *     properties:
  *       accessToken:
  *         type: string
- *       userId:
- *         type: number
+ *       id:
+ *         type: string
  *       userName:
  *         type: string
  *       email:
@@ -19,7 +19,7 @@
  *         type: string
  *     required:
  *        - accessToken
- *        - userId
+ *        - id
  *        - username
  *        - email
  */
@@ -27,7 +27,7 @@
 export class ResponseLoginUserModel {
     constructor(accessToken, user) {
         this.accessToken = accessToken;
-        this.userId = user.userId;
+        this.id = user.id;
         this.userName = user.userName;
         this.email = user.email;
         this.firstName = user.firstName;

@@ -79,7 +79,7 @@ let AuthService = {
                     role: RoleTypesEnum[1]
                 });
 
-                if (result) {
+                if (!result) {
                     errorHandler(
                         new ErrorModel(
                             "User with such username already exist.",
@@ -90,7 +90,6 @@ let AuthService = {
                 }
 
                 return response.json({
-                    success: true,
                     message: "Successful register user"
                 });
             });

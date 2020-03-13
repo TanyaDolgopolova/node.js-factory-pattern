@@ -7,6 +7,7 @@ const API_PORT = process.env.API_PORT || 3300;
 
 function bootstrap() {
     let app = express();
+    mongoose.set('useFindAndModify', false);
     mongoose.connect(config.database.dbConfig.url, {
         dbName: config.database.dbConfig.dbName,
         useUnifiedTopology: true,

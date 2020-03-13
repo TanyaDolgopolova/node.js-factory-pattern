@@ -29,7 +29,7 @@ let AuthRepository = {
         }
 
         let obj = new User(registerData);
-        let res = await obj.save();
+        await obj.save();
 
         return true;
     }

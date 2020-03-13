@@ -1,6 +1,6 @@
 export class UserModel {
-    constructor(userId, userName, email, firstName, lastName) {
-        this.userId = userId;
+    constructor(id, userName, email, firstName, lastName) {
+        this.id = id;
         this.userName = userName;
         this.email = email;
         this.firstName = firstName;

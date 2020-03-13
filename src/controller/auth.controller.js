@@ -25,7 +25,7 @@ module.exports = function AuthController(router) {
      *         schema:
      *           $ref: '#/definitions/ResponseLoginUser'
      *       400:
-     *         description: Bad user Login userame, not found in db.
+     *         description: Bad username, not found in db.
      *       404:
      *         description: Username and password don't match.
      *       500:
