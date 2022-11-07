@@ -37,7 +37,7 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
-    "babel-eslint": "^4.1.8",
+    "babel-eslint": "^10.1.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "compression": "^1.5.2",
